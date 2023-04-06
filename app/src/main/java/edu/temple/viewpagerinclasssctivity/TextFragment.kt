@@ -9,7 +9,7 @@ import android.widget.TextView
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
+private const val ARG_ITEM_NUM = "num"
 
 /**
  * A simple [Fragment] subclass.
@@ -18,12 +18,12 @@ private const val ARG_PARAM1 = "param1"
  */
 class TextFragment : Fragment() {
     // TODO: Rename and change types of parameters
-    private var param1: String? = null
+    private var param1: Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getInt(ARG_ITEM_NUM)
         }
     }
 
@@ -49,8 +49,10 @@ class TextFragment : Fragment() {
         fun newInstance(param1: String) =
             TextFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
+                    putString(ARG_ITEM_NUM, param1)
+
                 }
             }
+
     }
 }
